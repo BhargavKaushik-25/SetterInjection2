@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd">
+    <bean id="intel"
+          class="SetterInjection.Intel">
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+    <bean id="ryzen"
+          class="SetterInjection.Ryzen">
+        <!-- additional collaborators and configuration for this bean go here -->
+    </bean>
+    <bean id="hp" class="SetterInjection.HP">
+        <property name="Processor" ref="ryzen"></property>
+    </bean>
+    <bean id="dell" class="SetterInjection.Dell">
+        <property name="Processor" ref="intel"></property>
+    </bean>
+    <!-- more bean definitions for data access objects go here -->
+</beans>
